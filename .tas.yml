@@ -1,0 +1,21 @@
+---
+framework: jest
+preRun:
+  command:
+    - yarn
+preMerge:
+  env:
+    TRACE_PLAYWRIGHT: true
+    HEADLESS: true
+  pattern:
+    - 'test/unit/**/*.test.{js,ts,tsx}'
+postMerge:
+  env:
+    TRACE_PLAYWRIGHT: true
+    HEADLESS: true
+  pattern:
+    - 'test/unit/**/*.test.{js,ts,tsx}'
+postRun:
+  command:
+    - yarn --version
+version: 1.0
